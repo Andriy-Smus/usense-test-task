@@ -15,12 +15,18 @@ export class AppComponent {
   checkPasswordStrength() {
   
     const password = this.password;
-    console.log(password)
+    
+    if (!password) {
+      this.easyColor = "gray";
+      this.mediumColor = "gray";
+      this.strongColor = "gray";
+      return;
+  }
 
-    if (!password || password.length < 8) {
-        this.easyColor = "gray";
-        this.mediumColor = "gray";
-        this.strongColor = "gray";
+    if (password.length < 8) {
+        this.easyColor = "red";
+        this.mediumColor = "red";
+        this.strongColor = "red";
         return;
     }
   
@@ -38,8 +44,8 @@ export class AppComponent {
         this.strongColor = "gray";
     } else {
         this.easyColor = "red";
-        this.mediumColor = "red";
-        this.strongColor = "red";
+        this.mediumColor = "gray";
+        this.strongColor = "gray";
     }
   }
   
