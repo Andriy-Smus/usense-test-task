@@ -1,14 +1,6 @@
-
+<!-- parent component -->
 <div class="box-task">
   <h1>USENSE Test Task</h1>
-  <label for="password">Пароль:</label>
-  <input type="password" id="password" [(ngModel)]="password" (ngModelChange)="checkPasswordStrength()">
-  <div class="strength-sections">
-      <div id="easy" class="strength-section" [ngStyle]="{'background-color': easyColor}"></div>
-      <div id="medium" class="strength-section" [ngStyle]="{'background-color': mediumColor}"></div>
-      <div id="strong" class="strength-section" [ngStyle]="{'background-color': strongColor}"></div>
-  </div>
+  <app-password-input></app-password-input>
+  <app-password-strength></app-password-strength>
 </div>
-
-
-<!-- <router-outlet></router-outlet> -->
